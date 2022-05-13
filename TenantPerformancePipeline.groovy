@@ -24,7 +24,6 @@ node("master") {
         stage('Run the tests') {
             withEnv(["JAVA_HOME=${tool 'jdk8'}", "PATH+MAVEN=${tool 'mvn3.2.5'}/bin:${env.JAVA_HOME}/bin"]) {
 
-                git branch: 'develop', credentialsId: 'IDTQE-JENKINS', url: 'https://github.com/coretech/n2p-tenant-gatling-performance.git'
                 // sh "java -version"
                 // sh "mvn -v"
                 sh "echo 'STARTING...'"
