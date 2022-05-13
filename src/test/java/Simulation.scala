@@ -4,10 +4,10 @@ import io.gatling.core.structure.ScenarioBuilder
 
 object Simulation {
   def getCountriesScen: ScenarioBuilder = scenario("getCountries scenario")
-    .exec(getCountries)
+//    .exec(getCountries)
     .exec(postValidateCountries)
-    .exec(getCountryRegions)
-    .exec(getCountryRegionById)
-    .exec(getCountryRegionsByNodeAndId)
-    .exec(getLocationsProfiles)
+//    .exec(getCountryRegions)
+//    .exec(getCountryRegionById)
+//    .exec(getCountryRegionsByNodeAndId)
+//    .exec(getLocationsProfiles)
 }

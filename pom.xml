@@ -44,7 +44,7 @@
                     </includes>
                     <jvmArgs>
                         <jvmArg>-DbaseUrl=https://tenant-qa-us-east-1.qa.n2p.io</jvmArg>
-                        <jvmArg>-Dusers=10</jvmArg>
+                        <jvmArg>-Dusers=700</jvmArg>
                         <jvmArg>-Dduring=10</jvmArg>
                     </jvmArgs>
                     <propagateSystemProperties>true</propagateSystemProperties>
