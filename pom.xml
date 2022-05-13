@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>n2p-tenant-gatling-performance</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <gatling.simulationClass>LoadTest</gatling.simulationClass>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.gatling.highcharts</groupId>
+            <artifactId>gatling-charts-highcharts</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.gatling</groupId>
+            <artifactId>gatling-app</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.gatling</groupId>
+            <artifactId>gatling-recorder</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.gatling</groupId>
+                <artifactId>gatling-maven-plugin</artifactId>
+                <version>3.1.1</version>
+                <configuration>
+                    <simulationsFolder>src/test/java</simulationsFolder>
+                    <resourcesFolder>src/test/resources/</resourcesFolder>
+                    <includes>
+                        <include>${gatling.simulationClass}</include>
+                    </includes>
+                    <jvmArgs>
+                        <jvmArg>-DbaseUrl=https://tenant-qa-us-east-1.qa.n2p.io</jvmArg>
+                        <jvmArg>-Dusers=10</jvmArg>
+                        <jvmArg>-Dduring=10</jvmArg>
+                    </jvmArgs>
+                    <propagateSystemProperties>true</propagateSystemProperties>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
