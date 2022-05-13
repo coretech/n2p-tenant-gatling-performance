@@ -18,12 +18,13 @@ buildCommandToExecute = "mvn -B clean package"
 testCommandToExecute = "mvn clean gatling:test -Dusers=${users} -Dduring=${during}"
 
 // Start testing
-node("master") {
+node("qa_docker_based_agent_c5_2xlarge") {
 
     try {
         stage('Run the tests') {
-            withEnv(["JAVA_HOME=${tool 'jdk8'}", "PATH+MAVEN=${tool 'mvn4.0.0'}/bin:${env.JAVA_HOME}/bin"]) {
+            withEnv(["JAVA_HOME=${tool 'jdk8'}", "PATH+MAVEN=${tool 'mvn3.2.5'}/bin:${env.JAVA_HOME}/bin"]) {
 
+                git branch: 'main', credentialsId: 'IDTQE-JENKINS', url: 'https://github.com/coretech/n2p-tenant-gatling-performance.git'
                 // sh "java -version"
                 // sh "mvn -v"
                 sh "echo 'STARTING...'"
