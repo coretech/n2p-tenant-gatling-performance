@@ -22,7 +22,7 @@ node("master") {
 
     try {
         stage('Run the tests') {
-            withEnv(["JAVA_HOME=${tool 'jdk8'}", "PATH+MAVEN=${tool 'mvn3.2.5'}/bin:${env.JAVA_HOME}/bin"]) {
+            withEnv(["JAVA_HOME=${tool 'jdk8'}", "PATH+MAVEN=${tool 'mvn4.0.0'}/bin:${env.JAVA_HOME}/bin"]) {
 
                 // sh "java -version"
                 // sh "mvn -v"
