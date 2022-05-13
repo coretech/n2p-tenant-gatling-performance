@@ -18,7 +18,7 @@ buildCommandToExecute = "mvn -B clean package"
 testCommandToExecute = "mvn clean gatling:test -Dusers=${users} -Dduring=${during}"
 
 // Start testing
-node("qa_linux_awscli") {
+node("n2p_dev_docker_based_agent_latest") {
 
     try {
         stage('Run the tests') {
