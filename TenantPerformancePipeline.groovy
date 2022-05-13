@@ -18,7 +18,7 @@ buildCommandToExecute = "mvn -B clean package"
 testCommandToExecute = "mvn clean gatling:test -Dusers=${users} -Dduring=${during}"
 
 // Start testing
-node("jenkins.qaAgent") {
+node("qa_linux_awscli") {
 
     try {
         stage('Run the tests') {
